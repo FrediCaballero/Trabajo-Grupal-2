@@ -1,0 +1,16 @@
+[1]: Mostrar el siguiente menú y resolver los problemas de cada opción, hasta ingresar la opción  3 de salir. 
+					MENU PRINCIPAL
+					===============
+[1]: 		SUB MENU GENERA TERMINOS DE LA SIGUIENTE SERIE
+		=================================================
+		[1]: 1, 5, 3, 7, 5, 9, 7, ...,…….,n
+[2]: 10,14,12,16,14,18,16,20,18,22,20,…………n
+[3 ]: 1,3,6,10,15………n y calcular la suma de los que sean pares 
+	[4]: Salir
+
+						Ingresar Una Opción [-]
+
+[2]: 	En un examen el tipo de calificación es el siguiente: 	
+Puntaje	  Calificación 100 – 70	A   69 – 30	B   29 –   0	C Escribe un algoritmo que encuentre: El número de estudiantes que rindieron el examen. El número de estudiantes que obtuvieron A, B y C. El algoritmo termina cuando se le ingresa un puntaje negativo.  
+[3]: Salir
+						Ingresar Una Opción [-]
