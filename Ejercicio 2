@@ -8,7 +8,7 @@ int main() {
 	float nota;
 	int conta=0,contb=0,contc=0,numestud=0;
 	for (int i=0;;i++){
-	cout<<"Ingrese calificación (del 1 al 100) \n -parar terminar el proceso ingrese un numero negativo-:  "; cin>>nota;
+	cout<<"Ingrese calificación (del 0 al 100) \n -parar terminar el proceso ingrese un numero negativo-:  "; cin>>nota;
 	if (nota>100) {cout<<"Calificación invalida.  \n\nIngresela nuevamente."
 	;}
 	if (nota>=0 and nota<=29) { contc++;
