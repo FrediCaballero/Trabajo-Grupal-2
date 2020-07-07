@@ -1,1 +1,34 @@
+#include <iostream>
+#include <wchar.h>
+using namespace std;
 
+int main() {
+	setlocale(LC_ALL, "");
+
+	float nota;
+	int conta=0,contb=0,contc=0,numestud=0;
+	for (int i=0;;i++){
+	cout<<"Ingrese calificación (del 1 al 100) \n -parar terminar el proceso ingrese un numero negativo-:  "; cin>>nota;
+	if (nota>100) {cout<<"Calificación invalida.  \n\nIngresela nuevamente."
+	;}
+	if (nota>=0 and nota<=29) { contc++;
+		numestud++;}
+	else	if (nota>29 and nota<=69) { contb++;
+		numestud++;}	
+		else if (nota>69 and nota<=100) { conta++;
+		numestud++;}
+	
+	if (nota<0) {	cout<<"\nPROCESO FINALIZADO\n"; break;
+}
+	
+	
+	
+
+	}
+	cout<<"El número de estudiantes que rindieron el examen es "<<numestud<<endl;
+	cout<<"El numero de estudiantes que obtuvieron: "<<endl;
+	cout<<"A: "<<conta<<endl;
+	cout<<"B: "<<contb<<endl;
+	cout<<"C: "<<contc<<endl;
+	
+}
