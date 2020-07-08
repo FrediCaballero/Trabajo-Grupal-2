@@ -1,0 +1,95 @@
+#include<iostream>
+#include<conio.h>
+#include<math.h>
+#include<string>
+#include<stdlib.h>
+#include<time.h>
+#include<wchar.h>
+#include<cctype>
+
+using namespace std;
+int main()
+{ //declaramos variables
+	float puntaje_ex;
+	int i,cant_alum,nclasifA,nclasifB,nclasifC;
+	char op;
+	//datos
+	cout<<"Bienvenido. Obtendremos puntajes de los alumnos."<<endl;
+	//Empezamos proceso
+	cant_alum=nclasifA=nclasifB=nclasifC=0;
+		for (int i = 0;; i++)
+		{
+			cout<<"Ingrese datos del alumno:"<<endl;
+			loop: cout<<"Puntaje: ";
+			cin>>puntaje_ex;
+				while (puntaje_ex <0)
+			{
+				cout<<"Debe ingresar un valor mayor a 0"<<endl;
+				goto loop;
+			}
+			if (cin.fail())
+			{
+				cin.clear(); // clears error flags
+        		cin.ignore();
+        		cout << "Debe ingresar un valor numerico" << endl;
+			}
+			else if(puntaje_ex >= 70 && puntaje_ex <=100 )
+				{
+				cout<<"Clasificación A"<<endl;
+				nclasifA = nclasifA + 1;
+				cant_alum++;
+				cout<<"Si desea terminar, presione S para salir"<<endl;
+				cin>>op;
+					if (op == 's'|| op == 'S')
+					{
+						cout<<"Se terminará el proceso..."<<endl;
+						goto final;
+					}
+					else
+					{
+						goto loop;
+					}
+				}
+			else if(puntaje_ex >= 30 && puntaje_ex <= 69 )
+				{
+				cout<<"Clasificación B"<<endl;
+				nclasifB = nclasifB + 1;
+				cant_alum++;
+				cout<<"Si desea terminar, presione S para salir"<<endl;
+				cin>>op;
+					if (op == 's'|| op == 'S')
+					{
+						cout<<"Se terminará el proceso..."<<endl;
+						goto final;
+					}
+					else
+					{
+						goto loop;
+					}
+				}
+			else if(puntaje_ex >= 0 && puntaje_ex <= 29 )
+				{
+				cout<<"Clasificación C"<<endl;
+				nclasifC = nclasifC + 1;
+				cant_alum++;
+				cout<<"Si desea terminar, presione S para salir"<<endl;
+				cin>>op;
+					if (op == 's'|| op == 'S')
+					{
+						cout<<"Se terminará el proceso..."<<endl;
+						goto final;
+					}
+					else
+					{
+						goto loop;
+					}	
+				}
+	}
+	//Finalmente
+	final: cout<<"El número de alumnos que rindieron el examen es: "<<cant_alum<<endl;
+	cout<<"El número de alumnos que obtuvieron la clasificacion A es: "<<nclasifA<<endl;
+	cout<<"El número de alumnos que obtuvieron la clasificacion B es: "<<nclasifB<<endl;
+	cout<<"El número de alumnos que obtuvieron la clasificacion C es: "<<nclasifC<<endl;
+	cout<<"Se finalizara el programa"<<endl;
+	return 0;	
+}
