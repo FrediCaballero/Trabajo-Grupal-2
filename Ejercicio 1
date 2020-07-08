@@ -1,4 +1,4 @@
-/*
+
 Ejercicio 1
 Mostrar el siguiente menú y resolver los problemas de cada opción, hasta ingresar la opción  3 de salir. 
 					MENU PRINCIPAL
@@ -23,7 +23,6 @@ Mostrar el siguiente menú y resolver los problemas de cada opción, hasta ingre
 	El algoritmo termina cuando se le ingresa un puntaje negativo.  
 [3]: Salir
 						Ingresar Una Opción [-]
-*/
 
 //C++
 
@@ -33,8 +32,6 @@ Mostrar el siguiente menú y resolver los problemas de cada opción, hasta ingre
 #include <string.h>
 #include <math.h>
 #include <stdio.h>
-
-//Declaración del uso de Entrada/salida estandar
 using namespace std;
 
 //Declaración de Funciones
@@ -43,8 +40,8 @@ int submenu ();
 float calificacion ();
 
 
-//Declaración de Variables
-int movi, movisub, estudiante=0, A=0, B=0, C=0;
+//Declaración de Variables Globales
+int movi, movisub, n1, n2, n3, suma=0, estudiante=0, A=0, B=0, C=0;
 float puntaje;
 
 
@@ -52,7 +49,7 @@ float puntaje;
 //Funcion menu
 int menu()
 {system ("cls");
-cout<<"	\t\t\t   MENU PRINCIPAL"<<endl;
+cout<<"\n\t\t\t    MENU PRINCIPAL"<<endl;
 	cout<<"\t\t\t====================="<<endl<<endl;
 	cout<<"[1]:\t    SUB MENU GENERA TERMINOS DE LA SIGUIENTE SERIE"<<endl;
 	cout<<"\t   ================================================="<<endl<<endl;
@@ -69,17 +66,18 @@ cout<<"[2]: En un examen el tipo de calificacion es el siguiente:"<<endl;
 cout<<"[3]: Salir"<<endl<<endl;
 do
 	{
-		cout<<"Ingresar una Opcion [ ]:"<<"\b\b\b";
+		cout<<"\t\t\t\tIngresar una Opcion [ ]:"<<"\b\b\b";
 		cin>>movi;
 		cout<<endl;
-	} while(movi<1 || movi>3);
+	} while(movi<1 || movi>3);//Repetira hasta que no obtenga valores entre 1 y 3
   return movi;
 }
+//Fin Desarrollo de Funcion menu
 
-//Función Submenu
+//Función submenu
 int submenu()
 {system ("cls");
-cout<<"\t    SUB MENU GENERA TERMINOS DE LA SIGUIENTE SERIE"<<endl;
+cout<<"\n\t    SUB MENU GENERA TERMINOS DE LA SIGUIENTE SERIE"<<endl;
 	cout<<"\t   ================================================="<<endl<<endl;
 	cout<<"\t[1]: 1, 5, 3, 7, 5, 9, 7, ..., n"<<endl;
 	cout<<"\t[2]: 10, 14, 12, 16, 14, 18, 16, 20, 18, 22, 20, ..., n"<<endl;
@@ -87,26 +85,119 @@ cout<<"\t    SUB MENU GENERA TERMINOS DE LA SIGUIENTE SERIE"<<endl;
 	cout<<"\t[4]: Salir"<<endl<<endl;
 do
 	{
-		cout<<"Ingresar una Opcion [ ]:"<<"\b\b\b";
+		cout<<"\t\t\t\tIngresar una Opcion [ ]:"<<"\b\b\b";
 		cin>>movisub;
 		cout<<endl;
-	} while(movisub<1 || movisub>4);
+	} while(movisub<1 || movisub>4);//Repetira hasta que no obtenga valores entre 1 y 4
+	
+	//Desarrollo de Opciones del Submenu
+	{system ("cls");
+		switch (movisub)
+		{
+			
+			//Desarrollo de Opcion 1 del submenu
+			case 1: 
+			{
+				cout<<"\nDada la serie:	1, 5, 3, 7, 5, 9, 7, ..., n";
+				cout<<"\nIngrese el numero de orden del valor (n): ";
+				cin>>n1;
+				if (n1>=1)
+				{
+					cout<<"\n1";
+					int i1, j1; 
+					for (i1=2; i1<=n1; i1++)
+					{
+						if (i1%2==1)
+						{
+							cout<<", "<<i1;
+						}
+						else
+						{
+							j1= i1+3;
+							cout<<", "<<j1;
+						}	
+					}
+					cout<<endl;
+				}
+				else
+				{
+					cout<<"\nNumero de Valido"<<endl;
+				}
+			} break;
+			
+			//Desarrollo de opcion 2 del submenu
+			case 2: 
+			{
+				cout<<"\nDada la serie:	10, 14, 12, 16, 14, 18, 16, 20, 18, 22, 20, ..., n";
+				cout<<"\nIngrese el numero de orden del valor (n): ";
+				cin>>n2;	
+				if (n2>=1)
+				{
+					cout<<"\n10";
+					int i2, j2, k2; 
+					for (i2=2; i2<=n2; i2++)
+					{
+						if (i2%2==1)
+						{
+							k2= i2+9;
+							cout<<", "<<k2;
+						}
+						else
+						{
+							j2= i2+12;
+							cout<<", "<<j2;
+						}	
+					}
+					cout<<endl;
+				}
+				else
+				{
+					cout<<"\nNumero de Valido"<<endl;
+				}
+			} break;
+			
+			//Desarrollo de Opcion 3 del submenu
+			case 3: 
+			{
+				cout<<"\nDada la serie:	1, 3, 6, 10, 15, ..., n";
+				cout<<"\nIngrese el numero de orden del valor (n): ";
+				cin>>n3;
+				if (n3>=1)
+				{
+					cout<<"\t1";
+					int i3, j3;//Declaración de variable locales
+					for (i3=2; i3<=n3; i3++)
+					{
+						j3= i3*(i3+1)/2;
+						cout<<", "<<j3;
+						if (j3%2==0)
+						{
+							suma= j3+suma;//Acumulador de valores pares
+						}
+					}
+					cout<<endl<<"\nLa suma de los valores pares es: "<<suma<<endl;
+				}
+				else
+				{
+					cout<<"\nNumero de Valido"<<endl;
+				}	
+			} break;
+			
+			//Desarrollo de Opcion salir de submenu
+			default: cout<<"\n\t\tSaliendo de Submenu, pulse una tecla"<<endl; break;
+		}
+	}
   return movisub;
-  switch (movisub){
-  	case 1: 
-  		cout<<"";
-	case 2:
-		
-	case 3: ;
-  }	
 }
+//Fin Funcion submenu
 
 //Función Calificación
 float calificacion ()
 {system ("cls");
+cout<<"\nIngrese Puntajes con valores entre 0 y 100, para finalizar ingrese un valor negativo."<<endl;
 do
 	{
-		cout<<"Ingrese Puntaje:";
+		cout<<"\nIngrese Puntaje:";
 		cin>>puntaje;
 		if (puntaje>=0 && puntaje<=100)
 		{
@@ -146,16 +237,17 @@ do
 	cout<<"\nEl numero de estudiantes que obtuvo calificacion C es: "<<C;
 	}
 }
+//Fin Funcion calificacion
 
-//Proceso
+//Función Principal
 int main(){
 int op;
 do
  {system("cls");
- op= menu();//Llamar a función menu
+ op= menu();
   switch(op)
-  {case 1: submenu();break;//llamar a funcion submenu
-   case 2:calificacion();break;//llamar a funcion calificación
+  {case 1: submenu();break;
+   case 2:calificacion();break;
    }
    getche();
 }while(op!=3);
