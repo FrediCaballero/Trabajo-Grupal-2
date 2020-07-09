@@ -30,7 +30,7 @@ Mostrar el siguiente menú y resolver los problemas de cada opción, hasta ingre
 #include <iostream>
 #include <conio.h>
 #include <string.h>
-#include <math.h>
+#include <math.h> 
 #include <stdio.h>
 using namespace std;
 //Declaración de Funciones
