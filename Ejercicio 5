@@ -1,0 +1,142 @@
+#include<iostream>
+#include<conio.h>
+#include<math.h>
+#include<string>
+#include<stdlib.h>
+#include<time.h>
+#include<wchar.h>
+
+using namespace std;
+
+int main(){
+	int usuario,conta,intento,cant_alum,cant_cursos,nAprob,nDesaprob;
+	float puntaje_curs,puntajetot_curs,prom_alum;
+	string contra;
+	int nPromedio[7];
+	conta=0;
+ 	intento=0;
+ 	cout<<"Bienvenido. Para acceder al sistema ingrese su usuario y contrase\xA4""a."<<endl;
+ 	while(conta<3 && intento ==0 )
+    {  
+	cout<<"Ingrese usuario: "<<endl;
+	cin >> usuario;
+	if (cin.fail())
+			{
+				cin.clear(); // clears error flags
+        		cin.ignore();
+        		cout << "Usuario incorrecto" << endl;
+        }
+    if(usuario == 100)
+       {
+	   cout<<"El usuario es correcto "<<endl;
+       intento = 1;
+	   }
+      conta = conta + 1;
+}
+if(conta == 3 && intento == 0 )
+ 		{
+    	cout<<"Ha excedido la cant. m\xA0""xima de intentos. Regrese otro d\xA1""a"<<endl;	
+		}
+	else
+	{
+		conta=0;
+ 		intento=0;
+ 		while(conta<3 && intento ==0 )
+    	{ 
+			cout<<"Ahora ingrese su contrase\xA4""a: "<<endl;
+       		cin >> contra;
+       			if (cin.fail())
+				{
+				cin.clear(); // clears error flags
+        		cin.ignore();
+        		cout << "Contrase\xA4""a incorrecta" << endl;
+        		}
+	   			if(contra == "FISI" || contra == "fisi")
+       			{
+       			cout<<"La contrase\xA4""a es correcta"<<endl;
+       			intento = 1;
+				}	
+			conta =conta + 1;
+		}
+	if(conta == 3 && intento == 0 )
+ 		{
+    	cout<<"Ha excedido la cant. m\xA0""xima de intentos. Regrese otro d\xA1""a"<<endl;	
+		}
+	else
+	{
+		cout<<"Se acceder\xA0"" al sistema"<<endl;
+		cout<<"Se ingresar\xA0"" notas de los alumnos..."<<endl;
+		do
+		{
+			cout<<"Ingrese el n\xA3""mero de alumnos: "<<endl;
+			cin>>cant_alum;
+			if (cin.fail())
+				{
+				cin.clear(); // clears error flags
+        		cin.ignore();
+        		cout << "Debe ingresar un valor num\x82""rico" << endl;
+        		}
+		} while (cant_alum <= 0);
+		nAprob=nDesaprob=0;
+		for (int i = 1; i<=cant_alum; i++)
+		{
+			puntajetot_curs=prom_alum=0;
+			cout<<"Ingresaremos datos del alumno "<< i << ":";
+			do{
+			cout<<"\n\xA8""Cu\xA0""ntos cursos lleva?: "<<endl;
+			cin>>cant_cursos;
+				if (cin.fail())
+					{
+					cin.clear(); // clears error flags
+        			cin.ignore();
+        			cout << "Debe ingresar un valor num\x82""rico" << endl;
+        			}
+			} while (cant_cursos <= 0);
+			for (int j = 1; j <= cant_cursos; j++)
+			{
+			loop:	cout<<"Ingresaremos la nota final del curso "<< j << ":";
+					cout<<"\nPara salir inserte -1"<<endl;
+					cin>>puntaje_curs;
+				if (cin.fail())
+					{
+					cin.clear(); // clears error flags
+        			cin.ignore();
+        			cout << "Debe ingresar un valor num\x82""rico" << endl;
+        			}
+        		if (puntaje_curs >= 0 && puntaje_curs <= 20)
+        		{
+        			puntajetot_curs = puntajetot_curs + puntaje_curs;
+				}	
+				else if (puntaje_curs == -1)
+				{
+					cout<<"Programa finalizado"<<endl;
+					return 0;
+				}
+				else
+				{
+					cout<<"Ingrese notas de 0 a 20"<<endl;
+					goto loop;
+				}
+			}
+			prom_alum = puntajetot_curs / cant_cursos;
+			if (prom_alum >= 10.5 && prom_alum <= 20)
+			{
+				nAprob = nAprob + 1;
+			}
+			else if (prom_alum < 10.5 && prom_alum >= 0)
+			{
+				nDesaprob = nDesaprob + 1;
+			}
+			
+			nPromedio[i] = prom_alum;
+		}
+		for (int i=1; i <= cant_alum;i++)
+		{
+			printf("\nEl promedio del alumno %d es %d", i, nPromedio[i]);
+		}
+		cout<<"\nEl n\xA3""mero de alumnos aprobados es: "<<nAprob<<endl;
+		cout<<"El n\xA3""mero de alumnos desaprobados es: "<<nDesaprob<<endl;
+	}	
+return 0;
+}
+}
