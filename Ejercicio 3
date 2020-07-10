@@ -1,1 +1,58 @@
-@
+#include<iostream>
+#include <conio.h>
+
+using namespace std;
+int main() {
+//Programa principal
+
+//Declaracion de variables de E/S
+
+// x cantidad de dinero prestado
+// i interes
+// z cantidad de dinero que se devuelve
+// da dinero aplicado al capital
+// inte interés generado
+// sumai suma de intereses
+
+	float i = 0;
+	float inte = 0;
+	float z = 0;
+	float da = 0 ;
+	float sumai = 0;
+	float x = 0;
+
+//Inicio
+	cout << "******************************BIENVENIDO USUARIO, POR FAVOR INGRESA LOS DATOS REQUERIDOS****************************"<<endl;
+	cout << "Ingresar la cantidad de dinero prestado: " << endl;
+	cin >> x;
+	cout << "Ingresar los interes: " << endl;
+	cin >> i;
+	cout << "Ingresar la cantidad de dinero que se devuelve: " << endl;
+	cin >>z;
+
+//Proceso
+	do 
+		{inte = i/100*x;
+		cout << "La cantidad de interes en el mes es: " << inte << endl;
+		da = z-inte;
+		if (z>x) 
+			cout << "La cantidad de dinero aplicado al capital es: " << x << endl;
+		else 
+			cout << "La cantidad de dinero aplicado al capital es: " << da << endl;
+		
+		x = x-da;
+		if (x<0) 
+			cout << "La cantidad de dinero pendiente es 0" << endl;
+			
+		else 
+			cout << "La cantidad del prestamo pendiente es: " << x << endl;
+		sumai = sumai+inte;
+			cout<< "La cantidad acumulada de interes es: "<< sumai << endl;
+			cout<<"______________________________________________________________________"<<endl;
+		} while (x>0);
+		
+cout<< "********************************** FIN PROCESO **********************************" <<endl;
+getche();	
+return 0;
+}
+
