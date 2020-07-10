@@ -23,16 +23,32 @@ int main() {
 
 //Inicio
 	cout << "******************************BIENVENIDO USUARIO, POR FAVOR INGRESA LOS DATOS REQUERIDOS****************************"<<endl;
+	
 	cout << "Ingresar la cantidad de dinero prestado: " << endl;
-	cin >> x;
+	do {
+			cin >> x;
+			if (x<1)
+				cout << "Dato errado. Ingrese nuevamente la cantidad de dinero prestado: ";
+		} while (x<1);
+	
 	cout << "Ingresar los interes: " << endl;
-	cin >> i;
+	do {
+			cin >> i;
+			if (i<1)
+				cout << "Dato errado. Ingrese nuevamente los interes: ";
+		} while (i<1);
+			
 	cout << "Ingresar la cantidad de dinero que se devuelve: " << endl;
-	cin >>z;
+	do {
+			cin >> z;
+			if (z<1)
+				cout << "Dato errado. Ingrese nuevamente la cantidad de dinero que se devuelve: ";
+		} while (z<1);
+
 
 //Proceso
 	do 
-		{inte = i/100*x;
+		{inte = (i/100)*x;
 		cout << "La cantidad de interes en el mes es: " << inte << endl;
 		da = z-inte;
 		if (z>x) 
@@ -55,4 +71,5 @@ cout<< "********************************** FIN PROCESO *************************
 getche();	
 return 0;
 }
+
 
