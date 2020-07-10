@@ -161,3 +161,49 @@ int divpri=contpri/acumestu; int divsecu=contsecu/acumestu; int divtecc=conttec/
  cout<<"Profesionales: \n"<<divprof*100<<endl;
  cout<<"Postgrado:\n "<<"%"<<divpost*100<<endl;
   cout<<"Ninguno:\n "<<"%"<<divnin*100<<endl; }
+#include <iostream>
+using namespace std;
+
+int main() {
+	int contpri=0,contsecu=0,conttec=0,contprof=0,contpost=0,contnin=0;
+	int acumestu=0;
+int op;	
+	int puk=1;
+	
+	do {
+
+		cout<<"Ingrese nivel academico del encuestado \n ";
+		cout<<"(0) Ninguno \n (1) Primaria \n (2) Secundaria\n (3) Carrera tecnica \n (4) Estudios profesionales \n (5) Postgrado\t :"; cin>>op;
+	switch (op) {
+		case 1 : contpri++;
+		 break;
+		case 2:  contsecu++;
+		break;
+		
+		case 3:  conttec++;
+		 break;
+		
+		case 4: contprof++;
+		break;
+		
+		case 5: contpost++;
+		 break;
+		
+		case 0: contnin++;
+	 break;
+	} 	acumestu ++;
+	
+
+ cout<<"Desea agregar dato de otro encuestado? \n (1) Si. \n (2). No  :"; cin>>puk; } while(puk!=2) ; 
+int divpri=contpri/acumestu; int divsecu=contsecu/acumestu; int divtecc=conttec/acumestu; int divprof=contprof/acumestu; int divpost=contpost/acumestu; int divnin=contnin/acumestu;
+
+
+ cout<<"\n \t\tRESULTADOS FINALES:"<<endl;
+ cout<<"Total de encuestados: "<<acumestu;
+ cout<<"\n Encuestados con nivel de estudios: \n";
+ cout<<"Primaria: \n "<<divpri*100<<endl;
+ cout<<"Secundaria: \n"<<divsecu*100<<endl;
+ cout<<"Tecnicos: \n"<<divtecc*100<<endl;
+ cout<<"Profesionales: \n"<<divprof*100<<endl;
+ cout<<"Postgrado:\n "<<"%"<<divpost*100<<endl;
+  cout<<"Ninguno:\n "<<"%"<<divnin*100<<endl; }
