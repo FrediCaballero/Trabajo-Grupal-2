@@ -12,7 +12,7 @@ int main(){
 	int usuario,conta,intento,cant_alum,cant_cursos,nAprob,nDesaprob;
 	float puntaje_curs,puntajetot_curs,prom_alum;
 	string contra;
-	int nPromedio[7];
+	int nPromedio[300];
 	conta=0;
  	intento=0;
  	cout<<"Bienvenido. Para acceder al sistema ingrese su usuario y contrase\xA4""a."<<endl;
